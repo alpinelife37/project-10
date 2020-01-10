@@ -1,9 +1,12 @@
 const inquirer = require("inquirer");
+const inquirerRecursive = require("inquirer-recursive");
 const fs = require("fs");
 const util = require("util");
 const electron = require("electron");
 const writeFileAsync = util.promisify(fs.writeFile);
 const readFileAsync = util.promisify(fs.readFile);
+
+inquirer.registerPrompt("recursive", require("inquirer-recursive"));
 
 promptUser = () => {
   return inquirer.prompt([
@@ -28,7 +31,7 @@ promptUser = () => {
       message: "What is your managers office number?"
     },
     {
-      type: "list",
+      type: "input",
       name: "selection",
       message: "What type of team member would you like to add?",
       choices: [
@@ -37,6 +40,36 @@ promptUser = () => {
         "I don't want to add any more team members"
       ]
     }
+    // {
+    //   type: "input",
+    //   name: "engineersName",
+    //   message: "What is your engineer's name?"
+    // },
+    // {
+    //   type: "input",
+    //   name: "engineersId",
+    //   message: "What is your engineers ID?"
+    // },
+    // {
+    //   type: "input",
+    //   name: "engineersGithub",
+    //   message: "What is your engineers Github?"
+    // },
+    // {
+    //   type: "input",
+    //   name: "internsName",
+    //   message: "What is your intern's name?"
+    // },
+    // {
+    //   type: "input",
+    //   name: "internsEmail",
+    //   message: "What is your intern's email?"
+    // },
+    // {
+    //   type: "input",
+    //   name: "internsSchool",
+    //   message: "What is your intern's school?"
+    // }
   ]);
 };
 promptUser();
