@@ -196,7 +196,7 @@ engineerQuestions = function() {
         engineerAnswers.github
       );
       engineerArray.push(eng);
-
+      console.log(eng);
       askForEmployee();
     });
 };
