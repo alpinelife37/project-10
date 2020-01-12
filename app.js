@@ -75,7 +75,7 @@ askForEmployee = function() {
         choices: [
           "Engineer",
           "Intern",
-          "I don't want to add anymore team members"
+          "I don't want to add any more team members"
         ]
       }
     ])
@@ -87,58 +87,8 @@ askForEmployee = function() {
       } else if (
         val.selection === "I don't want to add any more team members"
       ) {
-        create(managerArray, internArray, engineerArray);
+        create(managerArray, engineerArray, internArray);
       }
-    });
-};
-
-engineerQuestions = function() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "name",
-        message: "What is your engineer's first name?"
-        // validate: function(val) {
-        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
-        // }
-      },
-      {
-        type: "input",
-        name: "idnumber",
-        message: "What is your engineers ID?"
-        // validate: function(val) {
-        //   return (
-        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
-        //   );
-        // }
-      },
-      {
-        type: "input",
-        name: "email",
-        message: "What is your engineer's email?"
-        // validate: function(val) {
-        //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
-        // }
-      },
-      {
-        type: "input",
-        name: "github",
-        message: "What is your engineers Github?"
-        // validate: function(val) {
-        //   return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
-        // }
-      }
-    ])
-    .then(engineerAnswers => {
-      const eng = new Engineer(
-        engineerAnswers.name,
-        engineerAnswers.idnumber,
-        engineerAnswers.email,
-        engineerAnswers.github
-      );
-      engineerArray.push(eng);
-      askForEmployee();
     });
 };
 
@@ -192,6 +142,58 @@ internQuestions = function() {
         internAnswers.school
       );
       internArray.push(int);
+      console.log(int);
+      askForEmployee();
+    });
+};
+
+engineerQuestions = function() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is your engineer's first name?"
+        // validate: function(val) {
+        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
+        // }
+      },
+      {
+        type: "input",
+        name: "idnumber",
+        message: "What is your engineers ID?"
+        // validate: function(val) {
+        //   return (
+        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
+        //   );
+        // }
+      },
+      {
+        type: "input",
+        name: "email",
+        message: this.name
+        // validate: function(val) {
+        //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
+        // }
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is your engineers Github?"
+        // validate: function(val) {
+        //   return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
+        // }
+      }
+    ])
+    .then(engineerAnswers => {
+      const eng = new Engineer(
+        engineerAnswers.name,
+        engineerAnswers.idnumber,
+        engineerAnswers.email,
+        engineerAnswers.github
+      );
+      engineerArray.push(eng);
+
       askForEmployee();
     });
 };
