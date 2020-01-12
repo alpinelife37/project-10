@@ -4,7 +4,7 @@
 
 ### DESCRIPTION
 
-Node app that quickly generates a team directory with information on the manager, and all the engineers and interns you add.
+Node app that quickly generates a team roster with information on the manager, and all the engineers and interns you add.
 
 ![Example profile](./lib/example.png)
 
@@ -12,7 +12,7 @@ Node app that quickly generates a team directory with information on the manager
 
 1. Install the required modules by typing "npm install" or "npm i" in the containing folder using your code editor terminal.
 2. Run the app by typing "node app.js" or "node app."
-3. Follow the prompts for the manager information and then choose to add as many interns and engineers as you want.
+3. Follow the prompts for the manager information and then choose to add as many interns and engineers as you want to add.
 4. When your done inputting your team, select "I don't want to add anymore team members," to create your team roster.
 5. Your new team roster HTML will be located in the output folder.
 
@@ -22,6 +22,8 @@ Node app that quickly generates a team directory with information on the manager
 - [CSS](https://www.w3schools.com/css/)
 - [Javascript](https://www.javascript.com/)
 - [Bootstrap](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [Google Fonts](https://fonts.google.com/)
 - [Node](https://nodejs.org/en/)
 - [NPM](https://www.npmjs.com/)
 - [Regex](https://www.regular-expressions.info/)

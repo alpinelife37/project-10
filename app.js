@@ -117,7 +117,7 @@ engineerQuestions = function() {
       {
         type: "input",
         name: "email",
-        message: this.name
+        message: "What is your engineer's email?"
         // validate: function(val) {
         //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
         // }
@@ -139,7 +139,6 @@ engineerQuestions = function() {
         engineerAnswers.github
       );
       engineerArray.push(eng);
-      console.log(eng);
       askForEmployee();
     });
 };
@@ -194,7 +193,6 @@ internQuestions = function() {
         internAnswers.school
       );
       internArray.push(int);
-      console.log(int);
       askForEmployee();
     });
 };
