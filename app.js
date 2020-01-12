@@ -8,8 +8,6 @@ const managerArray = [];
 const engineerArray = [];
 const internArray = [];
 
-inquirer.registerPrompt("recursive", require("inquirer-recursive"));
-
 promptManager = function() {
   inquirer
     .prompt([
