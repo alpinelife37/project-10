@@ -3,7 +3,6 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const generate = require("./lib/generateHTML");
 const create = require("./lib/create");
 const managerArray = [];
 const engineerArray = [];
@@ -63,7 +62,8 @@ promptManager = function() {
         managerAnswers.email,
         managerAnswers.github
       );
-      managerArray.push(man);
+      managerArray.push(managerAnswers);
+      console.log(managerArray);
       askForEmployee();
     });
 };
@@ -134,7 +134,7 @@ internQuestions = function() {
         internAnswers.email,
         internAnswers.github
       );
-      internArray.push(int);
+      internArray.push(internAnswers);
       askForEmployee();
     });
 };
@@ -176,7 +176,7 @@ engineerQuestions = function() {
         engineerAnswers.email,
         engineerAnswers.github
       );
-      engineerArray.push(eng);
+      engineerArray.push(engineerAnswers);
 
       askForEmployee();
     });
