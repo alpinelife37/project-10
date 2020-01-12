@@ -15,7 +15,7 @@ promptManager = function() {
     .prompt([
       {
         type: "input",
-        name: "managersName",
+        name: "name",
         message: "What is your managers first name?"
         // validate: function(val) {
         //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
@@ -23,7 +23,7 @@ promptManager = function() {
       },
       {
         type: "input",
-        name: "managersId",
+        name: "idnumber",
         message: "What is your managers id ?"
         // validate: function(val) {
         //   return (
@@ -33,7 +33,7 @@ promptManager = function() {
       },
       {
         type: "input",
-        name: "managersEmail",
+        name: "email",
         message: "What is your managers Email?"
         // validate: function(val) {
         //   return (
@@ -45,7 +45,7 @@ promptManager = function() {
       },
       {
         type: "input",
-        name: "managersOfficeNumber",
+        name: "officeNumber",
         message: "What is your managers office phone number?"
         // validate: function(val) {
         //   return (
@@ -60,10 +60,10 @@ promptManager = function() {
         managerAnswers.name,
         managerAnswers.idnumber,
         managerAnswers.email,
-        managerAnswers.github
+        managerAnswers.officeNumber
       );
-      managerArray.push(managerAnswers);
-      console.log(managerArray);
+      managerArray.push(man);
+      console.log(managerAnswers);
       askForEmployee();
     });
 };
@@ -100,7 +100,7 @@ internQuestions = function() {
     .prompt([
       {
         type: "input",
-        name: "internsName",
+        name: "name",
         message: "What is your intern's  first name?"
         // validate: function(val) {
         //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
@@ -108,7 +108,17 @@ internQuestions = function() {
       },
       {
         type: "input",
-        name: "internsEmail",
+        name: "idnumber",
+        message: "What is your intern's ID?"
+        // validate: function(val) {
+        //   return (
+        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
+        //   );
+        // }
+      },
+      {
+        type: "input",
+        name: "email",
         message: "What is your intern's email?"
         // validate: function(val) {
         //   return (
@@ -120,7 +130,7 @@ internQuestions = function() {
       },
       {
         type: "input",
-        name: "internsSchool",
+        name: "school",
         message: "What is your intern's school?"
         // validate: function(val) {
         //   return /[a-z1-9]/i.test(val) || "Must only be letters!";
@@ -132,9 +142,10 @@ internQuestions = function() {
         internAnswers.name,
         internAnswers.idnumber,
         internAnswers.email,
-        internAnswers.github
+        internAnswers.school
       );
-      internArray.push(internAnswers);
+      internArray.push(int);
+      console.log(int);
       askForEmployee();
     });
 };
@@ -144,7 +155,7 @@ engineerQuestions = function() {
     .prompt([
       {
         type: "input",
-        name: "engineersName",
+        name: "name",
         message: "What is your engineer's first name?"
         // validate: function(val) {
         //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
@@ -152,7 +163,7 @@ engineerQuestions = function() {
       },
       {
         type: "input",
-        name: "engineersId",
+        name: "idnumber",
         message: "What is your engineers ID?"
         // validate: function(val) {
         //   return (
@@ -162,7 +173,15 @@ engineerQuestions = function() {
       },
       {
         type: "input",
-        name: "engineersGithub",
+        name: "email",
+        message: this.name
+        // validate: function(val) {
+        //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
+        // }
+      },
+      {
+        type: "input",
+        name: "github",
         message: "What is your engineers Github?"
         // validate: function(val) {
         //   return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
@@ -176,7 +195,7 @@ engineerQuestions = function() {
         engineerAnswers.email,
         engineerAnswers.github
       );
-      engineerArray.push(engineerAnswers);
+      engineerArray.push(eng);
 
       askForEmployee();
     });
