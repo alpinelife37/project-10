@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -95,6 +94,57 @@ askForEmployee = function() {
     });
 };
 
+engineerQuestions = function() {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "name",
+        message: "What is your engineer's first name?"
+        // validate: function(val) {
+        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
+        // }
+      },
+      {
+        type: "input",
+        name: "idnumber",
+        message: "What is your engineers ID?"
+        // validate: function(val) {
+        //   return (
+        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
+        //   );
+        // }
+      },
+      {
+        type: "input",
+        name: "email",
+        message: this.name
+        // validate: function(val) {
+        //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
+        // }
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is your engineers Github?"
+        // validate: function(val) {
+        //   return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
+        // }
+      }
+    ])
+    .then(engineerAnswers => {
+      const eng = new Engineer(
+        engineerAnswers.name,
+        engineerAnswers.idnumber,
+        engineerAnswers.email,
+        engineerAnswers.github
+      );
+      engineerArray.push(eng);
+      console.log(eng);
+      askForEmployee();
+    });
+};
+
 internQuestions = function() {
   inquirer
     .prompt([
@@ -146,57 +196,6 @@ internQuestions = function() {
       );
       internArray.push(int);
       console.log(int);
-      askForEmployee();
-    });
-};
-
-engineerQuestions = function() {
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "name",
-        message: "What is your engineer's first name?"
-        // validate: function(val) {
-        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
-        // }
-      },
-      {
-        type: "input",
-        name: "idnumber",
-        message: "What is your engineers ID?"
-        // validate: function(val) {
-        //   return (
-        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
-        //   );
-        // }
-      },
-      {
-        type: "input",
-        name: "email",
-        message: this.name
-        // validate: function(val) {
-        //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
-        // }
-      },
-      {
-        type: "input",
-        name: "github",
-        message: "What is your engineers Github?"
-        // validate: function(val) {
-        //   return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
-        // }
-      }
-    ])
-    .then(engineerAnswers => {
-      const eng = new Engineer(
-        engineerAnswers.name,
-        engineerAnswers.idnumber,
-        engineerAnswers.email,
-        engineerAnswers.github
-      );
-      engineerArray.push(eng);
-      console.log(eng);
       askForEmployee();
     });
 };
