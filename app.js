@@ -1,4 +1,5 @@
 const inquirer = require("inquirer");
+const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -88,7 +89,7 @@ askForEmployee = function() {
       } else if (
         val.selection === "I don't want to add any more team members"
       ) {
-        create(managerArray, engineerArray, internArray);
+        create(managerArray, internArray, engineerArray);
       }
     });
 };
