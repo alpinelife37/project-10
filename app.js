@@ -62,7 +62,6 @@ promptManager = function() {
         managerAnswers.officeNumber
       );
       managerArray.push(man);
-      console.log(managerAnswers);
       askForEmployee();
     });
 };
