@@ -87,7 +87,7 @@ askForEmployee = function() {
       } else if (
         val.selection === "I don't want to add any more team members"
       ) {
-        create(managerArray, engineerArray, internArray);
+        create(managerArray, internArray, engineerArray);
       }
     });
 };
