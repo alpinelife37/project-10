@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -14,43 +13,43 @@ promptManager = function() {
       {
         type: "input",
         name: "name",
-        message: "What is your managers first name?"
-        // validate: function(val) {
-        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
-        // }
+        message: "What is your managers first name?",
+        validate: function(val) {
+          return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
+        }
       },
       {
         type: "input",
         name: "idnumber",
-        message: "What is your managers id ?"
-        // validate: function(val) {
-        //   return (
-        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
-        //   );
-        // }
+        message: "What is your managers id ?",
+        validate: function(val) {
+          return (
+            /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
+          );
+        }
       },
       {
         type: "input",
         name: "email",
-        message: "What is your managers Email?"
-        // validate: function(val) {
-        //   return (
-        //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(
-        //       val
-        //     ) || "Must be an email address like john@aol.com!"
-        //   );
-        // }
+        message: "What is your managers Email?",
+        validate: function(val) {
+          return (
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(
+              val
+            ) || "Must be an email address like john@aol.com!"
+          );
+        }
       },
       {
         type: "input",
         name: "officeNumber",
-        message: "What is your managers office phone number?"
-        // validate: function(val) {
-        //   return (
-        //     /^[2-9]\d{2}-\d{3}-\d{4}$/i.test(val) ||
-        //     "Must be a phone number in this format 123-456-7890!"
-        //   );
-        // }
+        message: "What is your managers office phone number?",
+        validate: function(val) {
+          return (
+            /^[2-9]\d{2}-\d{3}-\d{4}$/i.test(val) ||
+            "Must be a phone number in this format 123-456-7890!"
+          );
+        }
       }
     ])
     .then(managerAnswers => {
@@ -98,40 +97,40 @@ internQuestions = function() {
       {
         type: "input",
         name: "name",
-        message: "What is your intern's  first name?"
-        // validate: function(val) {
-        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
-        // }
+        message: "What is your intern's  first name?",
+        validate: function(val) {
+          return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
+        }
       },
       {
         type: "input",
         name: "idnumber",
-        message: "What is your intern's ID?"
-        // validate: function(val) {
-        //   return (
-        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
-        //   );
-        // }
+        message: "What is your intern's ID?",
+        validate: function(val) {
+          return (
+            /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
+          );
+        }
       },
       {
         type: "input",
         name: "email",
-        message: "What is your intern's email?"
-        // validate: function(val) {
-        //   return (
-        //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(
-        //       val
-        //     ) || "Must be an email address like john@aol.com!"
-        //   );
-        // }
+        message: "What is your intern's email?",
+        validate: function(val) {
+          return (
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i.test(
+              val
+            ) || "Must be an email address like john@aol.com!"
+          );
+        }
       },
       {
         type: "input",
         name: "school",
-        message: "What is your intern's school?"
-        // validate: function(val) {
-        //   return /[a-z1-9]/i.test(val) || "Must only be letters!";
-        // }
+        message: "What is your intern's school?",
+        validate: function(val) {
+          return /[a-z1-9]/i.test(val) || "Must only be letters!";
+        }
       }
     ])
     .then(internAnswers => {
@@ -142,7 +141,6 @@ internQuestions = function() {
         internAnswers.school
       );
       internArray.push(int);
-      console.log(int);
       askForEmployee();
     });
 };
@@ -153,36 +151,36 @@ engineerQuestions = function() {
       {
         type: "input",
         name: "name",
-        message: "What is your engineer's first name?"
-        // validate: function(val) {
-        //   return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
-        // }
+        message: "What is your engineer's first name?",
+        validate: function(val) {
+          return /^[a-zA-Z]+$/i.test(val) || "Must only be letters!";
+        }
       },
       {
         type: "input",
         name: "idnumber",
-        message: "What is your engineers ID?"
-        // validate: function(val) {
-        //   return (
-        //     /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
-        //   );
-        // }
+        message: "What is your engineers ID?",
+        validate: function(val) {
+          return (
+            /^[0-9]*$/i.test(val) || "Must be a number/numbers between 0-9"
+          );
+        }
       },
       {
         type: "input",
         name: "email",
-        message: this.name
-        // validate: function(val) {
-        //   return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
-        // }
+        message: "What is your email?",
+        validate: function(val) {
+          return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i.test(val);
+        }
       },
       {
         type: "input",
         name: "github",
-        message: "What is your engineers Github?"
-        // validate: function(val) {
-        //   return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
-        // }
+        message: "What is your engineers Github?",
+        validate: function(val) {
+          return /^(\w+\S+)$/i.test(val) || "Must be a Github user name!";
+        }
       }
     ])
     .then(engineerAnswers => {
